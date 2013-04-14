@@ -1,22 +1,22 @@
 # config/deploy.rb
 require "bundler/capistrano"
 
-set :scm, :git
-set :repository, "git@oneboxapp.com:oneday-website.git"
-set :branch, "origin/master"
-set :migrate_target, :current
-set :ssh_options, { :forward_agent => true }
-set :rails_env, "production"
-set :deploy_to, "/home/deploy/apps/one_day"
+set :scm,             :git
+set :repository,      "git@oneboxapp.com:oneday-website.git"
+set :branch,          "origin/master"
+set :migrate_target,  :current
+set :ssh_options,     { :forward_agent => true }
+set :rails_env,       "production"
+set :deploy_to,       "/home/deploy/apps/one_day"
 set :normalize_asset_timestamps, false
 
-set :user, "deploy"
-set :group, "staff"
-set :use_sudo, false
+set :user,            "deploy"
+set :group,           "staff"
+set :use_sudo,        false
 
-role :web, "106.187.88.115"
-role :app, "106.187.88.115"
-role :db, "106.187.88.115", :primary => true
+role :web,    "106.187.88.115"
+role :app,    "106.187.88.115"
+role :db,     "106.187.88.115", :primary => true
 
 set(:latest_release)  { fetch(:current_path) }
 set(:release_path)    { fetch(:current_path) }
@@ -29,9 +29,9 @@ set(:previous_revision) { capture("cd #{current_path}; git rev-parse --short HEA
 default_environment["RAILS_ENV"] = 'production'
 
 # Use our ruby-1.9.3-p392@one_day gemset
-default_environment["PATH"]         = "--"
-default_environment["GEM_HOME"]     = "--"
-default_environment["GEM_PATH"]     = "--"
+default_environment["PATH"]         = "/home/deploy/.rvm/gems/ruby-1.9.3-p392@one_day/bin:/home/deploy/.rvm/gems/ruby-1.9.3-p392@global/bin:/home/deploy/.rvm/rubies/ruby-1.9.3-p392/bin:/home/deploy/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
+default_environment["GEM_HOME"]     = "/home/deploy/.rvm/gems/ruby-1.9.3-p392@one_day"
+default_environment["GEM_PATH"]     = "/home/deploy/.rvm/gems/ruby-1.9.3-p392@one_day:/home/deploy/.rvm/gems/ruby-1.9.3-p392@global"
 default_environment["RUBY_VERSION"] = "ruby-1.9.3-p392"
 
 default_run_options[:shell] = 'bash'
@@ -137,4 +137,3 @@ end
 def run_rake(cmd)
   run "cd #{current_path}; #{rake} #{cmd}"
 end
-                                                                                                                                                                                                                                                                                                               end
