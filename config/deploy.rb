@@ -11,7 +11,7 @@ set :deploy_to,       "/home/deploy/apps/one_day"
 set :normalize_asset_timestamps, false
 
 set :user,            "deploy"
-set :group,           "staff"
+set :group,           "deploy"
 set :use_sudo,        false
 
 role :web,    "106.187.88.115"
