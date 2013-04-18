@@ -12,7 +12,7 @@ set :normalize_asset_timestamps, false
 
 set :user,            "deploy"
 set :group,           "deploy"
-set :use_sudo,        false
+set :use_sudo,        true
 
 role :web,    "106.187.88.115"
 role :app,    "106.187.88.115"
@@ -40,7 +40,8 @@ namespace :deploy do
   desc "Deploy your application"
   task :default do
     update
-    restart
+    stop
+    start
   end
 
   desc "Setup your git-based deployment app"
@@ -101,7 +102,8 @@ namespace :deploy do
 
   desc "Zero-downtime restart of Unicorn"
   task :restart, :except => { :no_release => true } do
-    run "kill -s USR2 `cat /tmp/unicorn.one_day.pid`"
+    stop
+    start
   end
 
   desc "Start unicorn"
@@ -111,7 +113,11 @@ namespace :deploy do
 
   desc "Stop unicorn"
   task :stop, :except => { :no_release => true } do
-    run "kill -s QUIT `cat /tmp/unicorn.one_day.pid`"
+    begin
+      run "kill -s QUIT `cat /tmp/unicorn.one_day.pid`"
+    rescue => e
+      puts 'no unicorn is started'
+    end
   end
 
   namespace :rollback do
