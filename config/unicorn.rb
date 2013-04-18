@@ -10,7 +10,7 @@ worker_processes 4
 
 # listen on both a Unix domain socket and a TCP port,
 # we use a shorter backlog for quicker failover when busy
-listen "/tmp/one_day.socket", :backlog => 64
+listen "#{root_path}/tmp/one_day.socket", :backlog => 64
 
 # Preload our app for more speed
 preload_app true
@@ -18,7 +18,7 @@ preload_app true
 # nuke workers after 30 seconds instead of 60 seconds (the default)
 timeout 30
 
-pid "/tmp/unicorn.one_day.pid"
+pid "#{root_path}/tmp/unicorn.one_day.pid"
 
 # Production specific settings
 if env == "production"
@@ -27,7 +27,7 @@ if env == "production"
   working_directory "/home/deploy/apps/one_day/current"
 
   # feel free to point this anywhere accessible on the filesystem
-  user 'deploy', 'staff'
+  user 'deploy', 'deploy'
   shared_path = "/home/deploy/apps/one_day/shared"
 
   stderr_path "#{shared_path}/log/unicorn.stderr.log"
@@ -41,7 +41,7 @@ before_fork do |server, worker|
 
   # Before forking, kill the master process that belongs to the .oldbin PID.
   # This enables 0 downtime deploys.
-  old_pid = "/tmp/unicorn.one_day.pid.oldbin"
+  old_pid = "#{server.config[:pid]}.oldbin"
   if File.exists?(old_pid) && server.pid != old_pid
     begin
       Process.kill("QUIT", File.read(old_pid).to_i)
