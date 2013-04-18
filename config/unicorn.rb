@@ -8,6 +8,8 @@ env = ENV["RAILS_ENV"] || "development"
 
 worker_processes 4
 
+root_path = "/home/deploy/apps/one_day/current"
+
 # listen on both a Unix domain socket and a TCP port,
 # we use a shorter backlog for quicker failover when busy
 listen "#{root_path}/tmp/one_day.socket", :backlog => 64
@@ -24,7 +26,7 @@ pid "#{root_path}/tmp/unicorn.one_day.pid"
 if env == "production"
   # Help ensure your application will always spawn in the symlinked
   # "current" directory that Capistrano sets up.
-  working_directory "/home/deploy/apps/one_day/current"
+  working_directory root_path
 
   # feel free to point this anywhere accessible on the filesystem
   user 'deploy', 'deploy'
