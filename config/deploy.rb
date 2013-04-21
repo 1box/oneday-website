@@ -105,10 +105,14 @@ namespace :deploy do
 
   desc "Zero-downtime restart of Unicorn"
   task :restart, :except => { :no_release => true } do
+    begin
     run "kill -s USR2 `cat #{current_path}/tmp/unicorn.one_day.pid`"
     # from LarryLv
     # stop
     # start
+    rescue
+      puts 'no unicorn is started'
+    end
   end
 
   desc "Start unicorn"
