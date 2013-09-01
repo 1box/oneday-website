@@ -2,7 +2,7 @@
 require "bundler/capistrano"
 
 set :scm,             :git
-set :repository,      "git@oneboxapp.com:oneday-website.git"
+set :repository,      "git@54.250.214.52:oneday-website.git"
 set :branch,          "origin/master"
 set :migrate_target,  :current
 set :ssh_options,     { :forward_agent => true }
@@ -14,9 +14,9 @@ set :user,            "deploy"
 set :group,           "deploy"
 set :use_sudo,        false
 
-role :web,    "106.187.88.115"
-role :app,    "106.187.88.115"
-role :db,     "106.187.88.115", :primary => true
+role :web,    "54.250.214.52"
+role :app,    "54.250.214.52"
+role :db,     "54.250.214.52", :primary => true
 
 set(:latest_release)  { fetch(:current_path) }
 set(:release_path)    { fetch(:current_path) }
