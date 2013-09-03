@@ -28,11 +28,11 @@ set(:previous_revision) { capture("cd #{current_path}; git rev-parse --short HEA
 
 default_environment["RAILS_ENV"] = 'production'
 
-# Use our ruby-1.9.3-p392@one_day gemset
-default_environment["PATH"]         = "/home/deploy/.rvm/gems/ruby-1.9.3-p392@one_day/bin:/home/deploy/.rvm/gems/ruby-1.9.3-p392@global/bin:/home/deploy/.rvm/rubies/ruby-1.9.3-p392/bin:/home/deploy/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
-default_environment["GEM_HOME"]     = "/home/deploy/.rvm/gems/ruby-1.9.3-p392@one_day"
-default_environment["GEM_PATH"]     = "/home/deploy/.rvm/gems/ruby-1.9.3-p392@one_day:/home/deploy/.rvm/gems/ruby-1.9.3-p392@global"
-default_environment["RUBY_VERSION"] = "ruby-1.9.3-p392"
+# Use our ruby-1.9.3-p448@one_day gemset
+default_environment["PATH"]         = "/home/deploy/.rvm/gems/ruby-1.9.3-p448@one_day/bin:/home/deploy/.rvm/gems/ruby-1.9.3-p448@global/bin:/home/deploy/.rvm/rubies/ruby-1.9.3-p448/bin:/home/deploy/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
+default_environment["GEM_HOME"]     = "/home/deploy/.rvm/gems/ruby-1.9.3-p448@one_day"
+default_environment["GEM_PATH"]     = "/home/deploy/.rvm/gems/ruby-1.9.3-p448@one_day:/home/deploy/.rvm/gems/ruby-1.9.3-p448@global"
+default_environment["RUBY_VERSION"] = "ruby-1.9.3-p448"
 
 default_run_options[:shell] = 'bash'
 
