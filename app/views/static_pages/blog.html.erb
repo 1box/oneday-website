@@ -1,0 +1,36 @@
+<% provide(:title, 'Blog') %>
+<h1>Blog</h1>
+
+<div class="row">
+  <div class="span8">
+    <!-- <h3>Posts</h3> -->
+    <% if @blogs.any? %>
+      <ol class="microposts">
+        <%= render partial: 'shared/blog', collection: @blogs %>
+      </ol>
+    <% end %>
+  </div>
+
+  <aside class="span4">
+  <% if admin_user %>
+    <section>
+    <%= link_to "Post Blog", postblog_path, class: "btn btn-large btn-primary" %>
+    </section>
+  <% end %>
+    <section>
+      <p class="lead">
+      One Day - Love plan, Love note! 
+      <%= link_to "Click to download!", 
+        "https://itunes.apple.com/us/app/yi-tian-ai-ji-hua-ai-ji-lu/id573096972?ls=1&mt=8
+        " %>
+      </p>
+    </section>
+    <section>
+      <ol>
+        <!-- <li><%= link_to "Contact oneday by Email", "oneboxcode@gmail.com" %></li> -->
+        <li><%= link_to "Follow oneday on Twitter", "http://twitter.com/oneboxapp" %></li>
+        <li><%= link_to "Follow oneday on Weibo", "http://weibo.com/oneboxapp" %></li>
+      </ol>
+    </section>
+  </aside>
+</div>

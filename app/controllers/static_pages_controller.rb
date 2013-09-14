@@ -12,7 +12,13 @@ class StaticPagesController < ApplicationController
   def about
   end
 
-  def
-    contact
+  def contact
+  end
+
+  def blog
+    @blogs = Post.all_blogs.paginate(page: params[:page])
+    if signed_in?
+      @post = current_user.posts.build if signed_in?
+    end
   end
 end

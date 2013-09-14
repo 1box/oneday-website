@@ -28,6 +28,10 @@ module SessionsHelper
     end
   end
 
+  def admin_user
+    signed_in? && current_user.admin?
+  end
+
   def sign_out
     current_user = nil
     cookies.delete(:remember_token)
