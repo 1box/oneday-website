@@ -1,6 +1,6 @@
 class CreateRelationships < ActiveRecord::Migration
   def change
-    create_table :relationships do |t|
+    create_table :relationships, options: 'CHARSET=utf8' do |t|
       t.integer :follower_id
       t.integer :followed_id
 
