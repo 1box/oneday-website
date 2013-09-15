@@ -41,7 +41,8 @@ class Post < ActiveRecord::Base
   end
 
   def self.recent_blogs(count)
-    recent_blog_ids = %(SELECT id FROM posts LIMIT #{count} )
+    recent_blog_ids = %(SELECT t.id FROM (SELECT * FROM posts LIMIT #{count}) AS t)
+    # recent_blog_ids = %(SELECT id FROM posts LIMIT #{count} )
     where("id IN (#{recent_blog_ids})")
   end
 end
