@@ -3,12 +3,16 @@
 
 <div class="row">
   <div class="span8">
-    <!-- <h3>Posts</h3> -->
-    <% if @blogs.any? %>
-      <ol class="microposts">
-        <%= render partial: 'shared/blog', collection: @blogs %>
-      </ol>
-    <% end %>
+    <ul class="nav nav-tabs">
+        <li class="<%= 'active' if params[:post_type] == '1' %>">
+        <%= link_to "App Blog", blog_path(post_type: 1) %>
+        </li>
+        <li class="<%= 'active' if params[:post_type] == '2' %>">
+        <%= link_to "Tech Blog", blog_path(post_type: 2) %>
+        </li>
+    </ul>
+
+    <%= render 'shared/blog_feed' %>
   </div>
 
   <aside class="span4">
@@ -17,6 +21,10 @@
     <%= link_to "Post Blog", postblog_path, class: "btn btn-large btn-primary" %>
     </section>
   <% end %>
+  <section>
+  <h3>Recently</h3>
+  <%= render 'shared/recent_blogs' %>
+  </section>
     <section>
       <p class="lead">
       One Day - Love plan, Love note! 

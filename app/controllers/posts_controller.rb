@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(params[:post])
     if @post.save
       flash[:success] = "Post created!"
-      redirect_to blog_path
+      redirect_to blog_path(post_type: @post.post_type)
     else
       render 'new'
     end
@@ -24,7 +24,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.update_attributes(params[:post])
       flash[:success] = "Post updated!"
-      redirect_to blog_path
+      redirect_to blog_path(post_type: @post.post_type)
     else
       render 'edit'
     end
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     flash[:success] = "Post deleted!"
-    redirect_back_or blog_path
+    redirect_back_or blog_path(post_type: 1)
   end
 
   private

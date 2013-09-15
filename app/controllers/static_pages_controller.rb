@@ -16,9 +16,18 @@ class StaticPagesController < ApplicationController
   end
 
   def blog
-    @blogs = Post.all_blogs.paginate(page: params[:page])
+
+    @post_type = params[:post_type]  # default app type
+    @post_type = 1 if @post_type == nil
+
+    @blogs = Post.blogs_for_type(@post_type).paginate(page: params[:page])
+    @recent_blogs = Post.recent_blogs(10)
     if signed_in?
       @post = current_user.posts.build if signed_in?
     end
+  end
+
+  def blog_detail
+    @current_blog = Post.find_by_id(params[:blog_id])
   end
 end

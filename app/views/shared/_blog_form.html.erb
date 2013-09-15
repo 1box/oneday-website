@@ -1,0 +1,9 @@
+<% form = object %>
+<%= form.label :title %>
+<%= form.text_field :title %>
+<%= form.label :content %>
+<%= form.text_area :content %>
+<%= form.radio_button :post_type, '1', checked: post_type_for_form_object(form.object) == 1 %> 
+<%= form.label :post_type, 'App Type', :value => '1' %>
+<%= form.radio_button :post_type, '2', checked: post_type_for_form_object(form.object) == 2 %>
+<%= form.label :post_type, 'Tech Type', :value => '2' %>

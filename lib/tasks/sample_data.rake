@@ -50,7 +50,13 @@ def make_posts
   10.times do
     title = Faker::Lorem.words(5)
     content = Faker::Lorem.paragraphs(3)
-    admin.posts.create!(title: title, content: content)
+    admin.posts.create!(title: title, content: content, post_type: 1)
+  end
+
+  10.times do
+    title = Faker::Lorem.words(5)
+    content = Faker::Lorem.paragraphs(3)
+    admin.posts.create!(title: title, content: content, post_type: 2)
   end
 end
 

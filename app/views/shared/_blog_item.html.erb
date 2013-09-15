@@ -1,0 +1,29 @@
+<li id="<%= blog_item.id %>">
+  <!-- <%= link_to gravatar_for(blog_item.admin), blog_item.admin %> -->
+
+  <h1><%= blog_item.title %></h1>
+
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(blog_item.created_at) %> ago.
+    by <%= link_to blog_item.admin.name, blog_item.admin %>
+
+  <% if current_user?(blog_item.admin) %>
+    |
+    <strong>
+      <%= link_to "edit", edit_post_path(blog_item) %>
+    </strong>
+    |
+    <strong>
+      <%= link_to "delete", blog_item, method: :delete,
+        confirm: "You sure?",
+        title: blog_item.title %>
+    </strong>
+  <% end %>
+  </span>
+
+  <p><%= markdown(blog_item.abstract) %></p>
+
+  <span>
+    <a href="<%= blogdetail_path(blog_id: blog_item.id) %>" class="btn btn-info">Go Detail</a>
+  </span>
+</li>

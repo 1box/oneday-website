@@ -6,6 +6,9 @@
 #  content    :string(255)
 #  created_at :datetime        not null
 #  updated_at :datetime        not null
+#  post_by    :integer
+#  title      :string(255)
+#  type       :integer         default(1)
 #
 
 require 'spec_helper'
@@ -25,6 +28,7 @@ describe Post do
   it { should respond_to(:content)}
   it { should respond_to(:post_by) }
   it { should respond_to(:admin) }
+  it { should respond_to(:post_type) }
 
   its(:admin) { should == admin }
 

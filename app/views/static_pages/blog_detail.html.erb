@@ -1,0 +1,28 @@
+<% provide(:title, 'Blog Detail') %>
+<h1>Blog Detail</h1>
+
+<li id="<%= @current_blog.id %>">
+  <!-- <%= link_to gravatar_for(@current_blog.admin), @current_blog.admin %> -->
+
+  <h1><%= @current_blog.title %></h1>
+
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(@current_blog.created_at) %> ago.
+    by <%= link_to @current_blog.admin.name, @current_blog.admin %>
+
+  <% if current_user?(@current_blog.admin) %>
+    |
+    <strong>
+      <%= link_to "edit", edit_post_path(@current_blog) %>
+    </strong>
+    |
+    <strong>
+      <%= link_to "delete", @current_blog, method: :delete,
+        confirm: "You sure?",
+        title: @current_blog.title %>
+    </strong>
+  <% end %>
+  </span>
+
+  <p><%= markdown(@current_blog.content) %></p>
+</li>

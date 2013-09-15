@@ -44,7 +44,7 @@ describe "StaticPages" do
   end
 
   describe "Blog page" do
-    before { visit blog_path }
+    before { visit blog_path(post_type: 1) }
     let(:heading) { 'Blog' }
     let(:page_title) { 'Blog' }
 
