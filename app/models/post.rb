@@ -24,7 +24,7 @@ class Post < ActiveRecord::Base
   def abstract
     max_length = 300
     if content.length > max_length
-      content[0..max_length]
+      content[0..max_length] + "..."
     else
       content
     end

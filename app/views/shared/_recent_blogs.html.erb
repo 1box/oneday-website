@@ -1,5 +1,7 @@
 <% if @recent_blogs.any? %>
   <% @recent_blogs.each do |recent_blog|%>
-    <p><%= link_to recent_blog.title, blogdetail_path(blog_id: recent_blog.id) %></p>
+    <li>
+      <%= link_to recent_blog.title, blogdetail_path(blog_id: recent_blog.id) %>
+    </li>
   <% end %>
 <% end %>

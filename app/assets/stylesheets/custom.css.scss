@@ -58,6 +58,10 @@ h2 {
   color: $grayLight;
 }
 
+h3 {
+  margin-bottom: 10px;
+}
+
 p{
   font-size: 1.1em; line-height: 1.7em;
 }
@@ -212,6 +216,20 @@ input, textarea, select, .uneditable-input {
       border-bottom: 1px solid $grayLighter;
   }
 } 
+}
+
+/* posts */
+.posts {
+  list-style: none;
+  margin: 10px 0 0 0;
+}
+
+.posts_li {
+  padding: 20px 0;
+  border-top: 5px solid #e8e8e8;
+  li {
+    padding: 5px 0;
+  }
 }
 
 /* microposts */

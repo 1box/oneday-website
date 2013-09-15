@@ -24,7 +24,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.update_attributes(params[:post])
       flash[:success] = "Post updated!"
-      redirect_to blog_path(post_type: @post.post_type)
+      redirect_to blogdetail_path(blog_id: @post)
     else
       render 'edit'
     end
