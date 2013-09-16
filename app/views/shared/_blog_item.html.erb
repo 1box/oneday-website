@@ -20,6 +20,7 @@
     </strong>
   <% end %>
   </span>
+  <section><%= render partial: "shared/disqus_count", locals: { e: blog_item } %></section>
 
   <p><%= markdown(blog_item.abstract) %></p>
 

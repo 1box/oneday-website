@@ -25,3 +25,8 @@
 
   <p><%= markdown(@current_blog.content) %></p>
 </li>
+
+<section>
+  <%= render partial: "shared/disqus", object: @current_blog %>
+</section>
+
