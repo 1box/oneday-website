@@ -13,12 +13,12 @@ gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.5'
 gem 'redcarpet'
 gem 'coderay'
+gem 'localeapp'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development do
-  gem 'localeapp'
   gem 'sqlite3', '1.3.5'
   gem 'annotate', '~> 2.4.1.beta'
   gem 'capistrano'
