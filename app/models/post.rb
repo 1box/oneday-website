@@ -10,9 +10,11 @@
 #
 
 class Post < ActiveRecord::Base
+  
+  include ActsAsViewsCount
 
   # type: app: 1, tech: 2, default: 1
-  attr_accessible :title, :content, :post_type
+  attr_accessible :title, :content, :post_type, :views_count
   belongs_to :admin, class_name: "User", foreign_key: :post_by
 
   validates :title,   presence: true, length: { maximum: 50 }
@@ -20,6 +22,9 @@ class Post < ActiveRecord::Base
   validates :post_by, presence: true
 
   default_scope order: 'posts.created_at DESC'
+
+  # set delay save to db with 30
+  acts_as_views_count delay: 30
 
   def abstract
     max_length = 300

@@ -27,7 +27,7 @@ class StaticPagesController < ApplicationController
     end
   end
 
-  def blog_detail
-    @current_blog = Post.find_by_id(params[:blog_id])
-  end
+  # def blog_detail
+  #   @current_blog = Post.find_by_id(params[:blog_id])
+  # end
 end
