@@ -18,6 +18,7 @@ gem 'coderay'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development do
+  gem 'localeapp'
   gem 'sqlite3', '1.3.5'
   gem 'annotate', '~> 2.4.1.beta'
   gem 'capistrano'
