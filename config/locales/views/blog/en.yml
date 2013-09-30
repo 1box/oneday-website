@@ -1,0 +1,19 @@
+en:
+  app_blog_tab: App Blog
+  tech_blog_tab: Tech Blog
+  post_blog_title: Post Blog
+  recently_section: Recently
+  app_link_title: One Day - Love plan, Love note! 
+  app_download_title: Click to download!
+  contact_by_email: Contact oneday by Email
+  contact_by_twitter: Follow oneday on Twitter
+  contact_by_weibo: Follow oneday on Weibo
+
+  blog_view_count: Views
+  blog_comments_count: Comments
+  blog_posted_prefix: Posted
+  blog_posted_suffix: ago.
+  blog_posted_by: by
+  blog_go_detail: Go Detail
+  
+  blog_detail_title: Blog Detail

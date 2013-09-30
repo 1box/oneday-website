@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def full_title(page_title)
-    base_title = "One Day Base Title"
+    base_title = t(:one_day_base_title)
     if page_title.empty?
       base_title
     else
@@ -27,5 +27,13 @@ module ApplicationHelper
       CodeRay.scan(code, language).div(:tab_width=>2)
     end
   end
+
+  # include WillPaginate::ViewHelpers
+
+  # def will_paginate_with_i18n(collection, options = {})
+  #   will_paginate_without_i18n(collection, options.merge(previous_label: I18n.t(:previous_label), next_label: I18n.t(:next_label)))
+  # end
+
+  # alias_method_chain :will_paginate, :i18n
 end
 

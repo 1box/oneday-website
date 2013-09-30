@@ -98,6 +98,7 @@ GEM
       spork (>= 0.8.4)
     highline (1.6.19)
     hike (1.2.3)
+    http_accept_language (2.0.0)
     i18n (0.6.5)
     journey (1.0.4)
     jquery-rails (2.2.1)
@@ -251,6 +252,7 @@ DEPENDENCIES
   growl (= 1.0.3)
   guard-rspec (= 0.5.5)
   guard-spork (= 0.3.2)
+  http_accept_language
   jquery-rails (= 2.2.1)
   localeapp
   mysql2 (~> 0.3.11)

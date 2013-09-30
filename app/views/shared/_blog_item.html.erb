@@ -4,18 +4,18 @@
   <h1><%= blog_item.title %></h1>
 
   <span class="timestamp">
-    Posted <%= time_ago_in_words(blog_item.created_at) %> ago.
-    by <%= link_to blog_item.admin.name, blog_item.admin %>
+    <%= t(:blog_posted_prefix) %> <%= time_ago_in_words(blog_item.created_at) %> <%= t(:blog_posted_suffix) %>
+    <%= t(:blog_posted_by) %> <%= link_to blog_item.admin.name, blog_item.admin %>
 
   <% if current_user?(blog_item.admin) %>
     |
     <strong>
-      <%= link_to "edit", edit_post_path(blog_item) %>
+      <%= link_to t(:edit_title), edit_post_path(blog_item) %>
     </strong>
     |
     <strong>
-      <%= link_to "delete", blog_item, method: :delete,
-        confirm: "You sure?",
+      <%= link_to t(:delete_title), blog_item, method: :delete,
+        confirm: t(:delete_alert_message),
         title: blog_item.title %>
     </strong>
   <% end %>
@@ -25,13 +25,13 @@
   <span class="timestamp">
     <%= render partial: "shared/disqus_count", locals: { e: blog_item } %>
     |
-    <%= link_to "#{blog_item.views_count_s} Views", blogdetail_path(blog_id: blog_item.id), anchor: "views_count" %>
+    <%= link_to "#{blog_item.views_count_s} " + t(:blog_view_count), blogdetail_path(blog_id: blog_item.id), anchor: "views_count" %>
   </span>
   </section>
 
   <p><%= markdown(blog_item.abstract) %></p>
 
   <span>
-    <a href="<%= blogdetail_path(blog_id: blog_item.id) %>" class="btn btn-info">Go Detail</a>
+    <a href="<%= blogdetail_path(blog_id: blog_item.id) %>" class="btn btn-info"><%= t(:blog_go_detail) %></a>
   </span>
 </li>

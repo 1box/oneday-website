@@ -2,19 +2,19 @@
 <header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "one day", root_path, id: "logo" %>
+      <%= link_to t(:one_day_title), root_path, id: "logo" %>
       <nav>
         <ul class="nav pull-right">
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Help", help_path %></li>
-          <li><%= link_to "Blog", blog_path(post_type: 1) %></li>
+          <li><%= link_to t(:home_title), root_path %></li>
+          <li><%= link_to t(:help_title), help_path %></li>
+          <li><%= link_to t(:blog_title), blog_path(post_type: 1) %></li>
           <% if signed_in? %>
-            <li><%= link_to "Users", users_path %></li>
-            <li><%= link_to "Profile", current_user %></li>
-            <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+            <li><%= link_to t(:users_title), users_path %></li>
+            <li><%= link_to t(:profile_title), current_user %></li>
+            <li><%= link_to t(:setting_title), edit_user_path(current_user) %></li>
             <li class="divider"></li>
             <li>
-            <%= link_to "Sign out", signout_path, method: "delete" %>
+            <%= link_to t(:sign_out_title), signout_path, method: "delete" %>
             </li>
 
             <!--<li id="fat-menu" class="dropdown">
@@ -31,7 +31,7 @@
               </ul>
               </li>-->
           <% else %>
-            <li><%= link_to "Sign in", signin_path %></li>
+            <li><%= link_to t(:sign_in_title), signin_path %></li>
           <% end %>
         </ul>
       </nav>

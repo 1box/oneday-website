@@ -1,0 +1,45 @@
+en:
+  activerecord:
+    attributes:
+      user:
+        password_digest: "Password"
+
+  one_day_base_title: One Day
+
+  one_day_title: One Day
+  home_title: Home
+  help_title: Help
+  blog_title: Blog
+  users_title: Users
+  profile_title: Profile
+  setting_title: Settings
+  sign_out_title: Sign out
+  sign_in_title: Sign in
+  sign_up_title: Sign up
+
+  about_title: About Us
+  contact_title: Contact
+  news_title: Recently
+
+  edit: edit
+  delete: delete
+  delete_alert_message: You Sure?
+  previous_label: Previous
+  next_label: Next
+
+  welcome_message: Welcome to One Day websites!
+  welcome_subtitle_prefix: This is the home page of
+  welcome_subtitle_link: "one day"
+  welcome_subtitle_suffix: application.
+  sign_up_now: Sign up now
+
+  help_subtitle_prefix: You can get help from
+  help_subtitle_link: "One Day|Help"
+  help_subtitle_suffix: page.
+
+  contact_subtitle_text: Contact us at the
+  contact_subtitle_link: contact page
+
+  sign_in_button_title: Sign in
+  sign_in_tip_message: New user?
+  sign_in_new_button: Sign up now!

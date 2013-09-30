@@ -1,14 +1,14 @@
-<% provide(:title, 'Blog') %>
-<h1>Blog</h1>
+<% provide(:title, t(:blog_title)) %>
+<h1><%= t(:blog_title) %></h1>
 
 <div class="row">
   <div class="span8">
     <ul class="nav nav-tabs">
         <li class="<%= 'active' if params[:post_type] == '1' %>">
-        <%= link_to "App Blog", blog_path(post_type: 1) %>
+        <%= link_to t(:app_blog_tab), blog_path(post_type: 1) %>
         </li>
         <li class="<%= 'active' if params[:post_type] == '2' %>">
-        <%= link_to "Tech Blog", blog_path(post_type: 2) %>
+        <%= link_to t(:tech_blog_tab), blog_path(post_type: 2) %>
         </li>
     </ul>
 
@@ -18,26 +18,26 @@
   <aside class="span4">
   <% if admin_user %>
     <section>
-    <%= link_to "Post Blog", postblog_path, class: "btn btn-large btn-primary" %>
+    <%= link_to t(:post_blog_title), postblog_path, class: "btn btn-large btn-primary" %>
     </section>
   <% end %>
     <section>
-      <h3>Recently</h3>
+      <h3><%= t(:recently_section) %></h3>
       <%= render 'shared/recent_blogs' %>
     </section>
     <section>
       <p class="lead">
-      One Day - Love plan, Love note! 
-      <%= link_to "Click to download!", 
+        <%= t(:app_link_title) %>
+        <%= link_to t(:app_download_title), 
         "https://itunes.apple.com/us/app/yi-tian-ai-ji-hua-ai-ji-lu/id573096972?ls=1&mt=8
         " %>
       </p>
     </section>
     <section>
       <ol>
-        <!-- <li><%= link_to "Contact oneday by Email", "oneboxcode@gmail.com" %></li> -->
-        <li><%= link_to "Follow oneday on Twitter", "http://twitter.com/oneboxapp" %></li>
-        <li><%= link_to "Follow oneday on Weibo", "http://weibo.com/oneboxapp" %></li>
+        <!-- <li><%= link_to t(:contact_by_email), "oneboxcode@gmail.com" %></li> -->
+        <li><%= link_to t(:contact_by_twitter), "http://twitter.com/oneboxapp" %></li>
+        <li><%= link_to t(:contact_by_weibo), "http://weibo.com/oneboxapp" %></li>
       </ol>
     </section>
   </aside>

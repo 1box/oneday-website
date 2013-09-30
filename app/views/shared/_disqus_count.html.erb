@@ -1,7 +1,11 @@
-<%= link_to "Comments", blogdetail_path(blog_id: e.id, anchor: "disqus_thread")%>
+<%= link_to t(:blog_comments_count), blogdetail_path(blog_id: e.id, anchor: "disqus_thread")%>
 
 <script type="text/javascript">
 /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_config = function () {
+  this.language = I18n.locale;
+};
+
 var disqus_shortname = 'oneboxblog'; // required: replace example with your forum shortname
 var disqus_title = "#{e.title}";
 var disqus_url = "#{ request.url }";

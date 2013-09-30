@@ -1,0 +1,26 @@
+zh:
+  create_account_title: 创建帐户
+  name_label: 用户名
+  email_label: 电子邮件
+  password_label: 密码
+  confirm_password_label: 确认密码
+
+  view_my_profile: 进入空间
+  microposts: 消息
+  followings: 关注
+  followers: 粉丝
+  compose_new_micropost: 发消息
+  post_button_title: 发布
+  micropost_feed_title: 我关注的消息
+
+  micropost_item_time_prefix: 发布于
+  micropost_item_time_suffix: 前.
+
+  user_micropsot_feed: 消息
+  follow_button_title: 关注
+  unfollow_button_title: 取消关注
+  all_users: 所有用户
+
+  update_your_profile: 更改信息
+  save_change_button: 保存
+  change_avatar: 修改头像

@@ -1,28 +1,34 @@
 OneDay::Application.routes.draw do
 
-  resources :users do
-    member do
-      get :following, :followers
+  scope "(:locale)", locale: /zh|en|nl/ do
+
+    resources :users do
+      member do
+        get :following, :followers
+      end
     end
+
+    resources :posts
+    resources :sessions,     only: [:new, :create, :destroy]
+    resources :microposts,   only: [:create, :destroy]
+    resources :relationships, only: [:create, :destroy]
+
+    match '/:locale', to: 'static_pages#home'
+
+    root to: 'static_pages#home'
+
+    match '/signup', to: 'users#new'
+    match '/signin', to: 'sessions#new'
+    match '/signout', to: 'sessions#destroy', via: :delete
+    match '/postblog', to: 'posts#new'
+    match "/blogdetail", to: 'posts#show'
+
+    match "/help", to: 'static_pages#help'
+    match "/about", to: 'static_pages#about'
+    match "/contact", to: 'static_pages#contact'
+    match "/blog", to: 'static_pages#blog'
+
   end
-
-  resources :posts
-  resources :sessions,     only: [:new, :create, :destroy]
-  resources :microposts,   only: [:create, :destroy]
-  resources :relationships, only: [:create, :destroy]
-
-  root to: 'static_pages#home'
-
-  match '/signup', to: 'users#new'
-  match '/signin', to: 'sessions#new'
-  match '/signout', to: 'sessions#destroy', via: :delete
-  match '/postblog', to: 'posts#new'
-  match "/blogdetail", to: 'posts#show'
-
-  match "/help", to: 'static_pages#help'
-  match "/about", to: 'static_pages#about'
-  match "/contact", to: 'static_pages#contact'
-  match "/blog", to: 'static_pages#blog'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

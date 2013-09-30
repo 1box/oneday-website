@@ -14,6 +14,7 @@ gem 'bootstrap-will_paginate', '0.0.5'
 gem 'redcarpet'
 gem 'coderay'
 gem 'localeapp'
+gem 'http_accept_language'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

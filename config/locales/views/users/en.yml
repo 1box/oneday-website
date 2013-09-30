@@ -1,0 +1,26 @@
+en:
+  create_account_title: Create my account
+  name_label: Name
+  email_label: Email
+  password_label: Password
+  confirm_password_label: Confirm Password
+
+  view_my_profile: view my profile
+  microposts: microposts
+  followings: followings
+  followers: followers
+  compose_new_micropost: "Compose new micropost..."
+  post_button_title: Post
+  micropost_feed_title: Micropost Feed
+
+  micropost_item_time_prefix: Posted
+  micropost_item_time_suffix: ago.
+
+  user_micropsot_feed: Microposts
+  follow_button_title: Follow
+  unfollow_button_title: Unfollow
+  all_users: All users
+
+  update_your_profile: Update your profile
+  save_change_button: Save changes
+  change_avatar: change

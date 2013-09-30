@@ -1,7 +1,8 @@
-<% provide(:title, 'Help') %>
-<h1>Help</h1>
+<% provide(:title, t(:help_title)) %>
+<h1><%= t(:help_title) %></h1>
+
 <p>
-  Get help on the OneDay at the
-  <a href="http://oneboxapp.com">One Day</a>
-  website.
+  <%= t(:help_subtitle_prefix) %>
+  <a href="http://oneboxapp.com"><%= t(:help_subtitle_link) %></a>
+  <%= t(:help_subtitle_suffix) %>
 </p>
