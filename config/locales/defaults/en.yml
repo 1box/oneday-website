@@ -21,8 +21,8 @@ en:
   contact_title: Contact
   news_title: Recently
 
-  edit: edit
-  delete: delete
+  edit_title: edit
+  delete_title: delete
   delete_alert_message: You Sure?
   previous_label: Previous
   next_label: Next
